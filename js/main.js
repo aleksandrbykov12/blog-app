@@ -16,7 +16,7 @@ publicBtnNode.addEventListener('click', function() {
 
     addPost(postFromUser);
 
-    //checkInputLength();
+    checkInputLength();
 
     renderPosts();
 
@@ -45,8 +45,6 @@ function validation() {
     } else {
         textCounter.style.color = 'black';
     };
-    
-    checkInputLength()
 
     if (titleLength > TITLE_VALIDATION_LIMIT) {
         validationMessageNode.innerText = `Заголовок больше ${TITLE_VALIDATION_LIMIT} символов`;
