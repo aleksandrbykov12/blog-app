@@ -32,10 +32,14 @@ function validation() {
 
     if (titleCount < 0) {
         titleCounter.style.color = 'red';
+    } else {
+        titleCounter.style.color = 'black';
     };
-    
+
     if (textCount < 0) {
         textCounter.style.color = 'red';
+    } else {
+        textCounter.style.color = 'black';
     };
 
     if (titleLength > TITLE_VALIDATION_LIMIT) {
