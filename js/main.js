@@ -16,7 +16,11 @@ publicBtnNode.addEventListener('click', function() {
 
     addPost(postFromUser);
 
+    checkInputLength();
+
     renderPosts();
+
+    clearInput();
 });
 
 inputTitleNode.addEventListener('input', validation);
@@ -59,6 +63,12 @@ function validation() {
     validationMessageNode.classList.add('validationHidden');
     publicBtnNode.disabled = false;
 };
+
+function checkInputLength() {
+    if (inputTitleNode.value.length === 0 || inputTextNode.value.length === 0) {
+        publicBtnNode.disabled = true;   
+    };
+}
 
 function getPostFromUser() {
     title = inputTitleNode.value;
@@ -135,4 +145,15 @@ function renderPosts() {
     }
     
     });
+};
+
+function clearInput() {
+    inputTitleNode.value = '';
+    inputTextNode.value = '';
+
+    const titleCount = TITLE_VALIDATION_LIMIT - inputTitleNode.value.length;
+    const textCount = TEXT_VALIDATION_LIMIT - inputTextNode.value.length;
+
+    titleCounter.innerText = `Осталось ${titleCount} символов`;
+    textCounter.innerText = `Осталось ${textCount} символов`;
 }

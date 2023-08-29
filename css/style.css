@@ -4,6 +4,7 @@ body {
 
 .container {
     margin: auto;
+    padding-top: 100px;
     max-width: 1440px;
 }
 
@@ -73,12 +74,14 @@ h2 {
     margin-bottom: 15px;
     font-size: 32px;
     font-weight: 700;
+    word-wrap: break-word;
 }
 
 .post-text {
     margin-bottom: 50px;
     font-size: 25px;
     font-weight: 400;
+    word-wrap: break-word;
 }
 
 .post-time {
