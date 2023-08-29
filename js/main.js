@@ -82,11 +82,19 @@ function getPostFromUser() {
 
 function addPost({title, text}) {
     const currentDate = new Date();
-    const dt = `${currentDate.toLocaleDateString()} ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+    const options = {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    };
+    // const dt = `${currentDate.toLocaleDateString()} ${currentDate.getHours()}:${currentDate.getMinutes('default', options)}`;
 
     posts.push ({
         currentDate,
-        dt,
+        // dt,
+        options,
         title,
         text
     });
@@ -105,8 +113,8 @@ function renderPosts() {
 
     posts.forEach(post => {
 
-    let minute = ((currentDate - post.currentDate) / 1000 / 60)
-    let seconds = ((currentDate - post.currentDate) / 1000)
+    let minute = ((currentDate - post.currentDate) / 1000 / 60);
+    let seconds = ((currentDate - post.currentDate) / 1000);
 
     const postItem = document.createElement('div');
     const postTime = document.createElement('p');
@@ -128,8 +136,8 @@ function renderPosts() {
     postItem.appendChild(postText);
 
     postTime.addEventListener('mouseover', function() {
-        postTime.innerText = `${post.dt}`
-    })
+        postTime.innerText = `${post.currentDate.toLocaleDateString('default', post.options)}`;
+    });
 
     postTime.addEventListener('mouseout', function() {
         if (seconds >= 60) {
@@ -142,7 +150,7 @@ function renderPosts() {
 
     if (seconds >= 60) {
         postTime.innerText = `${Math.round(minute)} мин. назад`
-    }
+    };
     
     });
 };
