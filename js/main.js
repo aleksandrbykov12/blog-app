@@ -25,10 +25,18 @@ inputTextNode.addEventListener('input', validation);
 function validation() {
     const titleLength = inputTitleNode.value.length;
     const textLength = inputTextNode.value.length;
-    const titleCount = `Осталось ${TITLE_VALIDATION_LIMIT - inputTitleNode.value.length} символов`;
-    const textCount = `Осталось ${TEXT_VALIDATION_LIMIT - inputTextNode.value.length} символов`;
-    titleCounter.innerText = titleCount;
-    textCounter.innerText = textCount;
+    const titleCount = TITLE_VALIDATION_LIMIT - inputTitleNode.value.length;
+    const textCount = TEXT_VALIDATION_LIMIT - inputTextNode.value.length;
+    titleCounter.innerText = `Осталось ${titleCount} символов`;
+    textCounter.innerText = `Осталось ${textCount} символов`;
+
+    if (titleCount < 0) {
+        titleCounter.style.color = 'red';
+    };
+    
+    if (textCount < 0) {
+        textCounter.style.color = 'red';
+    };
 
     if (titleLength > TITLE_VALIDATION_LIMIT) {
         validationMessageNode.innerText = `Заголовок больше ${TITLE_VALIDATION_LIMIT} символов`;
