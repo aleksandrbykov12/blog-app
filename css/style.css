@@ -1,0 +1,89 @@
+body {
+    font-family: Inter;
+}
+
+.container {
+    margin: auto;
+    max-width: 1440px;
+}
+
+h1 {
+    margin-bottom: 100px;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.blog__row {
+    display: flex;
+    gap: 100px;
+}
+
+.blog__col {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.blog__titleInput,
+.blog__textInput {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.blog__titleInput {
+    height: 60px;
+}
+
+.blog__textInput {
+    height: 250px;
+    resize: none;
+}
+
+.blog__validation {
+    font-size: 25px;
+    font-weight: 400;
+    color: #F00;
+}
+
+.validationHidden {
+    display: none;
+}
+
+.blog__publicBtn {
+    height: 60px;
+    font-family: inherit;
+    font-size: 32px;
+    color: #FFF;
+    background-color: #0094FF;
+    border: none;
+    cursor: pointer;
+}
+
+.blog__publicBtn:hover {
+    opacity: 0.7;
+}
+
+.post-title {
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.post-text {
+    margin-bottom: 50px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.post-time {
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: 400;
+    color: #0094FF;
+}
