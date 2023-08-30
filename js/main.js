@@ -65,7 +65,7 @@ function validation() {
 };
 
 function checkInputLength() {
-    if (inputTitleNode.value.length === 0 || inputTextNode.value.length === 0) {
+    if (inputTitleNode.value === "" || inputTextNode.value.length === 0) {
         publicBtnNode.disabled = true;   
     };
 }
